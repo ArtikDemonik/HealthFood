@@ -12,7 +12,7 @@ data class UserDbEntity(
     @ColumnInfo(name = "age") val age: Int,
     @ColumnInfo(name = "height") val height: Int,
     @ColumnInfo(name = "weight") val weight: Int,
-    @ColumnInfo(name = "activityFactor") val activityFactor: Int,
+    @ColumnInfo(name = "needsCalories") val needCalories: Int,
 )
 
 @Entity(tableName = "product")
@@ -25,6 +25,13 @@ data class ProductDbEntity(
     @ColumnInfo(name = "carbohydrates") val carbohydrates: Int,
 )
 
+data class UserTuple(
+    @ColumnInfo(name = "name") val name: String,
+    @ColumnInfo(name = "age") val age: Int,
+    @ColumnInfo(name = "height") val height: Int,
+    @ColumnInfo(name = "weight") val weight: Int,
+    @ColumnInfo(name = "needsCalories") val needCalories: Int
+)
 
 @Entity(
     tableName = "dailyConsumption",

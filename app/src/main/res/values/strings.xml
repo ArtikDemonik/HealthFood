@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HealthFood</string>
+    <string name="title_activity_add_user">AddUser</string>
+    <string name="title_activity_see_stats">SeeStatsActivity</string>
 </resources>

@@ -8,11 +8,11 @@ import kotlinx.coroutines.launch
 
 class MainVM(private val foodRepository: FoodRepository): ViewModel() {
 
-    var name: MutableLiveData<String> = MutableLiveData<String>()
+    var users = MutableLiveData<List<UserDbEntity>>()
 
-    fun getNameByID(id: Int){
+    fun getUsers(){
         viewModelScope.launch {
-             name.value = foodRepository.getNameByID(id)
+            users.value = foodRepository.getUsers()
         }
     }
 }

@@ -14,6 +14,7 @@ object Dependencies {
     private val appDatabase: AppDatabase by lazy {
         Room.databaseBuilder(applicationContext, AppDatabase::class.java, "database.db")
             .createFromAsset("health.db")
+            .fallbackToDestructiveMigration()
             .build()
     }
 
