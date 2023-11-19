@@ -7,6 +7,17 @@ import androidx.room.Query
 interface FoodDao{
     @Query("SELECT * FROM USER")
     suspend fun getUsers(): List<UserDbEntity>
+    @Query("select * from meal where user=:id AND date=:date")
+    suspend fun getMeals(id: Int, date: String): List<Meal>
+
+    @Query("select * from product")
+    suspend fun getProducts(): List<ProductDbEntity>
+
+    @Query("select * from product where id=:id")
+    suspend fun getProductById(id: Int): ProductDbEntity
+
+    @Query("insert into meal (product, weight, user, date) VALUES (:product, :weight, :user, :date)")
+    suspend fun addMeal(date: String, product: Int, weight: Double, user: Int)
 
     @Query("SELECT * FROM USER WHERE id=:id")
     suspend fun getUser(id: Int): UserDbEntity

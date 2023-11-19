@@ -25,6 +25,25 @@ data class ProductDbEntity(
     @ColumnInfo(name = "carbohydrates") val carbohydrates: Int,
 )
 
+@Entity(tableName = "meal")
+data class Meal(
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
+    val id: Long = 0,
+
+    @ColumnInfo(name = "product")
+    val product: Int,
+
+    @ColumnInfo(name = "weight")
+    val weight: Double,
+
+    @ColumnInfo(name = "user")
+    val user: Int,
+
+    @ColumnInfo(name = "date")
+    val date: String
+)
+
 data class UserTuple(
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "age") val age: Int,

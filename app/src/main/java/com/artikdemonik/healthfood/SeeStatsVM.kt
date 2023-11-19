@@ -7,6 +7,14 @@ import kotlinx.coroutines.launch
 
 class SeeStatsVM(private val foodRepository: FoodRepository): ViewModel() {
     val user = MutableLiveData<UserDbEntity>()
+    val calories = MutableLiveData<Float>()
+
+
+    fun getCalories(id: Int, date: String){
+        viewModelScope.launch {
+            calories.value = foodRepository.getDayCalories(id, date)
+        }
+    }
 
     fun getUser(id: Int){
         viewModelScope.launch{

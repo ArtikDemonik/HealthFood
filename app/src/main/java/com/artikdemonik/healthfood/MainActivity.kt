@@ -30,10 +30,10 @@ class MainActivity : ComponentActivity() {
         Dependencies.init(applicationContext)
         val viewModel = MainVM(Dependencies.foodRepository)
         viewModel.getUsers()
-
         setContent {
+
             var users by remember{
-                mutableStateOf(listOf(UserDbEntity(-1, "Костя Дудоров", 18, 174, 64, 10)))
+                mutableStateOf(listOf(UserDbEntity(-1, "Тут никого нет", 18, 174, 64, 10)))
             }
             viewModel.users.observe(this){
                 users = it
@@ -101,9 +101,12 @@ class MainActivity : ComponentActivity() {
                 .padding(bottom = 7.dp)
                 .offset(x = 6.dp, y = 6.dp),
             onClick = {
-                val intent = Intent(this, SeeStatsActivity::class.java)
-                intent.putExtra("id", user.id)
-                startActivity(intent)
+                if(user.name != "Тут никого нет"){
+                    val intent = Intent(this, SeeStatsActivity::class.java)
+                    intent.putExtra("id", user.id)
+                    startActivity(intent)
+                }
+
             }
         ){
             Text(user.name, fontSize = 20.sp, color = Color.DarkGray)

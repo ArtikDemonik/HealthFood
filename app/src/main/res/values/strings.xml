@@ -2,4 +2,6 @@
     <string name="app_name">HealthFood</string>
     <string name="title_activity_add_user">AddUser</string>
     <string name="title_activity_see_stats">SeeStatsActivity</string>
+    <string name="title_activity_diary">DiaryActivity</string>
+    <string name="title_activity_add_meal">AddMealActivity</string>
 </resources>

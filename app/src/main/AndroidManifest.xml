@@ -12,6 +12,16 @@
         android:theme="@style/Theme.HealthFood"
         tools:targetApi="31">
         <activity
+            android:name=".AddMealActivity"
+            android:exported="false"
+            android:label="@string/title_activity_add_meal"
+            android:theme="@style/Theme.HealthFood" />
+        <activity
+            android:name=".DiaryActivity"
+            android:exported="false"
+            android:label="@string/title_activity_diary"
+            android:theme="@style/Theme.HealthFood" />
+        <activity
             android:name=".SeeStatsActivity"
             android:exported="false"
             android:label="@string/title_activity_see_stats"

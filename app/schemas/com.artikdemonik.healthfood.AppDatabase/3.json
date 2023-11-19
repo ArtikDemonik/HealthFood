@@ -1,8 +1,8 @@
 {
   "formatVersion": 1,
   "database": {
-    "version": 1,
-    "identityHash": "8521555cb86007e6d7013cd569a767ca",
+    "version": 3,
+    "identityHash": "efbe99837f03c78904ec4cc9653e6d4b",
     "entities": [
       {
         "tableName": "user",
@@ -159,12 +159,56 @@
             ]
           }
         ]
+      },
+      {
+        "tableName": "meal",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `product` INTEGER NOT NULL, `weight` REAL NOT NULL, `user` INTEGER NOT NULL, `date` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "product",
+            "columnName": "product",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weight",
+            "columnName": "weight",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user",
+            "columnName": "user",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8521555cb86007e6d7013cd569a767ca')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'efbe99837f03c78904ec4cc9653e6d4b')"
     ]
   }
 }
